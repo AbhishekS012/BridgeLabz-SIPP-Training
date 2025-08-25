@@ -1,0 +1,6 @@
+DECLARE marks as HashMap<String, Integer>
+ADD ("John", 90)
+ADD ("Alice", 95)
+ADD ("Bob", 88)
+highestScorer = entry in marks with MAX value
+PRINT highestScorer

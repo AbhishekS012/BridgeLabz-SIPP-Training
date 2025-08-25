@@ -1,0 +1,12 @@
+CLASS Employee
+    ATTRIBUTES: name, department
+    CONSTRUCTOR(name, department)
+        SET this.name = name
+        SET this.department = department
+
+DECLARE employees as ArrayList<Employee>
+ADD Employee("John", "IT")
+ADD Employee("Alice", "HR")
+ADD Employee("Bob", "IT")
+FILTER employees where department == "IT"
+PRINT filtered list
