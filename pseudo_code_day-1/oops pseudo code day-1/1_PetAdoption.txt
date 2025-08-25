@@ -1,0 +1,40 @@
+CLASS Pet
+    ATTRIBUTES: name, age
+    CONSTRUCTOR(name, age)
+        SET this.name = name
+        SET this.age = age
+    METHOD displayInfo()
+        PRINT name, age
+
+CLASS Dog EXTENDS Pet
+    ATTRIBUTE: breed
+    CONSTRUCTOR(name, age, breed)
+        CALL super(name, age)
+        SET this.breed = breed
+    METHOD displayInfo()
+        CALL super.displayInfo()
+        PRINT breed
+
+CLASS Cat EXTENDS Pet
+    ATTRIBUTE: color
+    CONSTRUCTOR(name, age, color)
+        CALL super(name, age)
+        SET this.color = color
+    METHOD displayInfo()
+        CALL super.displayInfo()
+        PRINT color
+
+CLASS Bird EXTENDS Pet
+    ATTRIBUTE: species
+    CONSTRUCTOR(name, age, species)
+        CALL super(name, age)
+        SET this.species = species
+    METHOD displayInfo()
+        CALL super.displayInfo()
+        PRINT species
+
+MAIN
+    CREATE Dog("Bruno", 3, "Labrador")
+    CREATE Cat("Kitty", 2, "White")
+    CREATE Bird("Tweety", 1, "Parrot")
+    CALL displayInfo() on each
