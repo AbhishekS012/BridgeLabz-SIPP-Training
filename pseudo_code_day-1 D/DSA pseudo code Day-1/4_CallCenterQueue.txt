@@ -1,0 +1,21 @@
+DECLARE normalQueue as Queue<String>
+DECLARE emergencyQueue as Queue<String>
+
+FUNCTION addCustomer(name, priority)
+    IF priority == "emergency"
+        ENQUEUE name to emergencyQueue
+    ELSE
+        ENQUEUE name to normalQueue
+
+FUNCTION serveCustomer()
+    IF emergencyQueue is not empty
+        DEQUEUE and PRINT customer from emergencyQueue
+    ELSE IF normalQueue is not empty
+        DEQUEUE and PRINT customer from normalQueue
+    ELSE
+        PRINT "No customers"
+
+MAIN
+    CALL addCustomer("Alice", "normal")
+    CALL addCustomer("Bob", "emergency")
+    CALL serveCustomer()

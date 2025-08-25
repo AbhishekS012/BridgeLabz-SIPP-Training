@@ -1,0 +1,14 @@
+DECLARE stack as empty Stack<String>
+FUNCTION typeText(text)
+    PUSH text to stack
+FUNCTION undo()
+    IF stack is not empty
+        POP lastText from stack
+        PRINT "Reverted:", lastText
+    ELSE
+        PRINT "No actions to undo"
+
+MAIN
+    CALL typeText("Hello")
+    CALL typeText("Hello World")
+    CALL undo()
